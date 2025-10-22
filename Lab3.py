@@ -15,12 +15,15 @@ def rysuj_pasy_pionowe_szare(w, h, grub, kolor):
 
 
 def negatyw_1(obraz):
-    tab = np.asarray(obraz, dtype=np.uint8)
+    tab = np.array(obraz)
     h, w = tab.shape
 
     for i in range(h):
         for j in range(w):
-            tab[i][j] = abs(tab[i][j] - 1)
+            if tab[i][j] == 1:
+                tab[i][j] = 0
+            else:
+                tab[i][j] = 1
 
     return Image.fromarray(tab)
 
@@ -31,12 +34,13 @@ def negatyw(obraz):
     return
 
 
-# obraz1 = Image.open("inicjaly.bmp")
-# obraz2 = negatyw(obraz1)
-# obraz2.show()
-
-obraz1 = rysuj_pasy_pionowe_szare(200, 100, 10, 100)
+obraz1 = Image.open("inicjaly.bmp")
+obraz2 = negatyw(obraz1)
 obraz1.show()
+obraz2.show()
+
+# obraz1 = rysuj_pasy_pionowe_szare(200, 100, 10, 100)
+# obraz1.show()
 
 
 
