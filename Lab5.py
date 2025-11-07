@@ -112,16 +112,16 @@ im = Image.open("Sebastian_Adamus.png")
 print("Statystyki obrazu Sebastian_Adamus.png (im):")
 statystyki(im)
 r, g, b = im.split()
-# rysuj_histogram_RGB(im, "obraz")
-# rysuj_histogram_L(r, "kanał r")
-# rysuj_histogram_L(g, "kanał g")
-# rysuj_histogram_L(b, "kanał b")
+rysuj_histogram_RGB(im, "obraz")
+rysuj_histogram_L(r, "kanał r")
+rysuj_histogram_L(g, "kanał g")
+rysuj_histogram_L(b, "kanał b")
 
 
 """ Zad 1b """
-# print("kanał r:", zlicz_piksele(r, 155))
-# print("kanał g:", zlicz_piksele(g, 155))
-# print("kanał b:", zlicz_piksele(b, 155))
+print("kanał r:", zlicz_piksele(r, 155))
+print("kanał g:", zlicz_piksele(g, 155))
+print("kanał b:", zlicz_piksele(b, 155))
 
 """ Zad 1c """
 print("Ilość pikseli [155,155,155] w im:", zlicz_piksele(im, [155, 155, 155]))
